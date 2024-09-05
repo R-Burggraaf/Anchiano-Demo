@@ -2,9 +2,12 @@ package com.anchiano.Models;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 public class Bin {
-
+    //    Id is auto incremented to keep adding to the list of bins. Each bin has a trash type, max capacity and geolocation to start with.
+    //    The main value that will be updated constantly is the current capacity of the bin.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -20,6 +23,15 @@ public class Bin {
 
     @Column
     private String geoLocation;
+
+
+
+
+    //Getters and Setters for all values
+    public int getAllowedCapacity() {
+
+        return 1750;
+    }
 
     public long getId() {
         return id;
